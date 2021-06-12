@@ -6,7 +6,7 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #FED766;
+    background: radial-gradient(#FED766 60%, #ac9551) ;
 }
 
 .container {
