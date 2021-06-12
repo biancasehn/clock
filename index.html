@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <div class="frame">
+            <div class="nail"></div>
+            <p>If not now, <br/> when?</p>
+        </div>
+        <div class="clock">
+            <div class="numbers">
+                <p id="Twelve">12</p>
+                <p id="One">1</p>
+                <p id="Two">2</p>
+                <p id="Three">3</p>
+                <p id="Four">4</p>
+                <p id="Five">5</p>
+                <p id="Six">6</p>
+                <p id="Seven">7</p>
+                <p id="Eight">8</p>
+                <p id="Nine">9</p>
+                <p id="Ten">10</p>
+                <p id="Eleven">11</p>
+            </div>
+            <div class="hand hand-sec"></div>
+            <div class="hand hand-min"></div>
+            <div class="hand hand-hour"></div>
+        </div>
+    </section>
+<script>
+    const handSec = document.querySelector(".hand-sec")
+    const handMin = document.querySelector(".hand-min")
+    const handHour = document.querySelector(".hand-hour")
+
+    function setDate() {
+        const date = new Date()
+        const seconds = date.getSeconds()
+        console.log(seconds)
+        const min = date.getMinutes()
+        const hour = date.getHours()
+        
+        const secDegree = 6*seconds
+        console.log(secDegree)
+        const minDegree = 6*min
+        const hourDegree = 30*hour
+
+        secDegree === 0 ? handSec.style.transform = "rotate(90deg)" : handSec.style.transform = `rotate(${secDegree + 90}deg)`;    
+        handMin.style.transform = `rotate(${minDegree + 90}deg)`;
+        handHour.style.transform = `rotate(${hourDegree + 90}deg)`;
+    }
+
+    setInterval(setDate, 1000)
+
+</script>
+</body>
+</html>
